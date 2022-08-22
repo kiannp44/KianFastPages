@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Java Notebook",
-            "content": "public class HelloStatic { public static void main(String[] args) { System.out.println(&quot;Hi&quot;); } } HelloStatic.main(null); . Hi .",
+            "content": "public class HelloStatic { public static void main(String[] args) { System.out.println(&quot;Hello World!&quot;); } } HelloStatic.main(null); . Hi .",
             "url": "https://kiannp44.github.io/KianFastPages/fastpages/jupyter/2022/08/21/Java1.html",
             "relUrl": "/fastpages/jupyter/2022/08/21/Java1.html",
             "date": " • Aug 21, 2022"
