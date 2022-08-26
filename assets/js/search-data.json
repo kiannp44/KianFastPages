@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Install Check",
-            "content": "Python Version Check . python --version . . Python 3.9.12 . Java(c) Version Checks . java --version . openjdk 11.0.16 2022-07-19 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04) OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing) . javac --version . javac 11.0.16 . Anaconda Version Check . conda --version . conda 4.13.0 . Kernel Checks . jupyter kernelspec list . Available kernels: bash /home/kianp/.local/share/jupyter/kernels/bash java /home/kianp/.local/share/jupyter/kernels/java javascript /home/kianp/.local/share/jupyter/kernels/javascript python3 /home/kianp/.local/share/jupyter/kernels/python3 .",
+            "content": "Python Version Check . python --version . . Python 3.9.12 . Java(c) Version Checks . java --version . . openjdk 11.0.16 2022-07-19 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04) OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing) . javac --version . . javac 11.0.16 . Anaconda Version Check . conda --version . . conda 4.13.0 . Kernel Checks . jupyter kernelspec list . . Available kernels: bash /home/kianp/.local/share/jupyter/kernels/bash java /home/kianp/.local/share/jupyter/kernels/java javascript /home/kianp/.local/share/jupyter/kernels/javascript python3 /home/kianp/.local/share/jupyter/kernels/python3 .",
             "url": "https://kiannp44.github.io/KianFastPages/fastpages/jupyter/2022/08/25/checks.html",
             "relUrl": "/fastpages/jupyter/2022/08/25/checks.html",
             "date": " • Aug 25, 2022"
