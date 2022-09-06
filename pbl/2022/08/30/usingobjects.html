@@ -194,6 +194,7 @@ window.onload = wrap_img;
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1 - Subtraction"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2 - Addition"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3 - Multiplication"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"0 - Quit"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
     <span class="p">}</span>
@@ -233,6 +234,19 @@ window.onload = wrap_img;
                 <span class="n">asc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
 
                 <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">Scanner</span> <span class="n">msc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Simple Multiplication ---"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Please select first number: "</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">time1</span> <span class="o">=</span> <span class="n">msc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span> <span class="c1">//</span>
+
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Please select second number: "</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">time2</span> <span class="o">=</span> <span class="n">msc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Your answer is: "</span> <span class="o">+</span> <span class="p">(</span><span class="n">time1</span> <span class="o">*</span> <span class="n">time2</span><span class="p">));</span>
+                <span class="n">msc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+
+                <span class="k">break</span><span class="p">;</span>
                     
             <span class="k">default</span><span class="p">:</span>
                 <span class="c1">//Prints error message from console</span>
@@ -266,13 +280,14 @@ Select A Function
 -------------------------
 1 - Subtraction
 2 - Addition
+3 - Multiplication
 0 - Quit
 -------------------------
 
-1: Simple Subtraction ---
+3: Simple Multiplication ---
 Please select first number: 
 Please select second number: 
-Your answer is: 10
+Your answer is: 25
 0: See you later!
 </pre>
 </div>
