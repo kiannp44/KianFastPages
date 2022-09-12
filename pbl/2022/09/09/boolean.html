@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -218,6 +218,107 @@ window.onload = wrap_img;
 Enter the operator (+,-,*,/): /
 Enter your second number: 0.0
 The answer is: 1.6666666666666667
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">double</span> <span class="n">c1</span><span class="p">;</span> 
+<span class="kt">double</span> <span class="n">c2</span><span class="p">;</span>
+
+<span class="c1">// Take input from the user</span>
+<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Enter the first number: "</span><span class="p">);</span>
+
+<span class="c1">// Take the inputs</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c1</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Enter the operator (+,-,*,/): "</span><span class="p">);</span>
+
+<span class="kt">char</span> <span class="n">operator</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">next</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">operator</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Enter second number: "</span><span class="p">);</span>
+
+<span class="n">c2</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c2</span><span class="p">);</span>
+
+<span class="kt">double</span> <span class="n">output</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="n">operator</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="c1">// Case to add </span>
+<span class="k">case</span> <span class="sc">'+'</span><span class="p">:</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="p">;</span>
+
+    <span class="k">break</span><span class="p">;</span>
+
+<span class="c1">// Case to subtract </span>
+<span class="k">case</span> <span class="sc">'-'</span><span class="p">:</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">-</span> <span class="n">c2</span><span class="p">;</span>
+
+    <span class="k">break</span><span class="p">;</span>
+
+<span class="c1">// Case to multiply </span>
+<span class="k">case</span> <span class="sc">'*'</span><span class="p">:</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">c2</span><span class="p">;</span>
+
+    <span class="k">break</span><span class="p">;</span>
+
+<span class="c1">// Case to divide </span>
+<span class="k">case</span> <span class="sc">'/'</span><span class="p">:</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">/</span> <span class="n">c2</span><span class="p">;</span>
+
+    <span class="k">break</span><span class="p">;</span>
+
+<span class="nl">default:</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Unknown input"</span><span class="p">);</span>
+
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The final equation: "</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c1</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">operator</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">c2</span> <span class="o">+</span> <span class="s">" = "</span> <span class="o">+</span> <span class="n">output</span><span class="p">);</span> <span class="c1">// Final result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter the first number: 5.0
+Enter the operator (+,-,*,/): /
+Enter second number: 5.0
+The final equation: 
+5.0 / 5.0 = 1.0
 </pre>
 </div>
 </div>
