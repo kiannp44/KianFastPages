@@ -2,8 +2,19 @@
   
     
         "post0": {
+            "title": "Code.org Notes",
+            "content": "Methods . An instruction or action of an object | ex: myPainterPlus.turnLeft(); | Can use it to make things simpler and easier so you don&#39;t have the repeat things multiple times. | . Loops . while loop: Completes an action while a certain factor is true. | can be used to make complicated algorithms to complete tasks and make overall code simple. | ex: while (isOnBucket()) { takePaint(); }&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/div&gt; | .",
+            "url": "https://kiannp44.github.io/KianFastPages/pbl/2022/09/11/code.org.html",
+            "relUrl": "/pbl/2022/09/11/code.org.html",
+            "date": " • Sep 11, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Boolean Expressions and If Statements",
-            "content": "import java.util.Scanner; //library for user input import java.lang.Math; //library for random numbers import java.util.Random; //library for random number pick private void print(){ System.out.println(&quot;Guess the number, 1-100.&quot;); } print(); Random rand = new Random(); int maxNumber = 100; int randomNumber = rand.nextInt(maxNumber) + 1; System.out.println(randomNumber) //Generates a random number for chooser . Guess the number, 1-100. 29 .",
+            "content": "If Statements . If Statement . If statements can be used to excecute a method or a series of methods according to a condition if the condition is met. ## If Else Statement | Same thing as an if statements, but if something else is met other than the condition for the If Statement, then it would run a different line of code. ## If-Elseif-Else | If the condition of something is met, then run the code, if not then try to meet the next condition. If both are false then run the final condition. | . import java.util.Scanner; Scanner scanner = new Scanner(System.in); double c1; double c2; System.out.print(&quot;Enter your first number: &quot;); c1 = scanner.nextDouble(); System.out.println(x); System.out.print(&quot;Enter the operator (+,-,*,/): &quot;); // First input for operator choice char operator = scanner.next().charAt(0); System.out.println(operator); System.out.print(&quot;Enter your second number: &quot;); // Second input for operator chosen c2 = scanner.nextDouble(); System.out.println(y); if (operator == &#39;+&#39;) { System.out.println(&quot;The answer is: &quot;+ (c1 + c2)); // If addition is picked } else if (operator == &#39;-&#39;) { System.out.println(&quot;The answer is: &quot;+ (c1 - c2)); // If subtraction is picked } else if (operator == &#39;*&#39;) { System.out.println(&quot;The answer is: &quot;+ c1 * c2); // If multiplication is picked } else if (operator == &#39;/&#39;) { System.out.println(&quot;The answer is: &quot;+ c1 / c2); // If division is picked } else { System.out.println(&quot;Unknown Operation&quot;); // If anything else is chosen } . Enter your first number: 0.0 Enter the operator (+,-,*,/): / Enter your second number: 0.0 The answer is: 1.6666666666666667 . De Morgan&#39;s Law .",
             "url": "https://kiannp44.github.io/KianFastPages/pbl/2022/09/09/boolean.html",
             "relUrl": "/pbl/2022/09/09/boolean.html",
             "date": " • Sep 9, 2022"
@@ -12,23 +23,12 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Focus and Habits",
             "content": "Vocabulary and Gratitude . People walking around prestige colleges often find themselves depressed. Dopamine can be an evolutionary reason. When we obtain what we always wanted, we start picking out the flaws of it. This can be an evolutionary reason and can cause us to obtain the next best thing or cause us to be even more depressed. Gratitude may be the solution to these problems. | Somebody who I have gratitude for at school is my math teacher. He helps me understand the difficult topics while making it fun. Who I have gratitude for at home is my dad who helps me out with everything there is. | I think everyones goal in life is to be successful, but success has different definitions for everybody. For me is to be educated and complete everything I want to do. Completing goals in life is what makes someone the most happy. | .",
             "url": "https://kiannp44.github.io/KianFastPages/pbl/2022/09/09/Focus_andHabits.html",
             "relUrl": "/pbl/2022/09/09/Focus_andHabits.html",
             "date": " • Sep 9, 2022"
-        }
-        
-    
-  
-    
-        ,"post2": {
-            "title": "Code.org Notes",
-            "content": "Methods . An instruction or action of an object | ex: myPainterPlus.turnLeft(); | Can use it to make things simpler and easier so you don&#39;t have the repeat things multiple times. | . Loops . while loop: Completes an action while a certain factor is true. | can be used to make complicated algorithms to complete tasks and make overall code simple. | ex: while (isOnBucket()) { takePaint(); }&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/div&gt; | .",
-            "url": "https://kiannp44.github.io/KianFastPages/pbl/2022/09/08/code.org.html",
-            "relUrl": "/pbl/2022/09/08/code.org.html",
-            "date": " • Sep 8, 2022"
         }
         
     
