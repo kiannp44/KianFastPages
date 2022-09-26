@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": "&lt;div id=&quot;myDIV&quot; class=&quot;header&quot;&gt; &lt;h2&gt;My To Do List&lt;/h2&gt; &lt;input type=&quot;text&quot; id=&quot;myInput&quot; placeholder=&quot;Title...&quot;&gt; &lt;span onclick=&quot;newElement()&quot; class=&quot;addBtn&quot;&gt;Add&lt;/span&gt; &lt;/div&gt; &lt;ul id=&quot;myUL&quot;&gt; &lt;li&gt;Hit the gym&lt;/li&gt; &lt;li class=&quot;checked&quot;&gt;Pay bills&lt;/li&gt; &lt;li&gt;Meet George&lt;/li&gt; &lt;li&gt;Buy eggs&lt;/li&gt; &lt;li&gt;Read a book&lt;/li&gt; &lt;li&gt;Organize office&lt;/li&gt; &lt;/ul&gt; . evalmachine.&lt;anonymous&gt;:1 &lt;div id=&#34;myDIV&#34; class=&#34;header&#34;&gt; ^ SyntaxError: Unexpected token &lt; at createScript (vm.js:56:10) at Object.runInThisContext (vm.js:97:10) at run ([eval]:1020:15) at onRunRequest ([eval]:864:18) at onMessage ([eval]:828:13) at emitTwo (events.js:106:13) at process.emit (events.js:191:7) at process.nextTick (internal/child_process.js:758:12) at _combinedTickCallback (internal/process/next_tick.js:73:7) at process._tickCallback (internal/process/next_tick.js:104:9) .",
-            "url": "https://kiannp44.github.io/KianFastPages/2022/09/26/frontend.html",
-            "relUrl": "/2022/09/26/frontend.html",
+            "title": "Frontend",
+            "content": "",
+            "url": "https://kiannp44.github.io/KianFastPages/pbl/2022/09/26/frontend.html",
+            "relUrl": "/pbl/2022/09/26/frontend.html",
             "date": " • Sep 26, 2022"
         }
         
