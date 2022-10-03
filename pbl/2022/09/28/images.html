@@ -178,26 +178,6 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>javax.imageio.IIOException: Can't read input file!
-	at java.desktop/javax.imageio.ImageIO.read(ImageIO.java:1308)
-	at REPL.$JShell$16D$ImageIOTest.main($JShell$16D.java:48)
-	at REPL.$JShell$64.do_it$($JShell$64.java:35)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at io.github.spencerpark.ijava.execution.IJavaExecutionControl.lambda$execute$1(IJavaExecutionControl.java:95)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Success
 </pre>
@@ -414,21 +394,9 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Original: 0 0x0  images/ninja.png
-Scaled: 0 0x0  images/ninja.png
+<pre>Original: 23316 160x160  images/ninja.png
+Scaled: 5115 53x53  images/tmp/ninja.png
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">java.lang.NullPointerException: null</span>
-<span class="ansi-red-intense-fg ansi-bold">	at Pics.convertToAscii(#34:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at Pics.main(#34:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at .(#65:1)</span></pre>
 </div>
 </div>
 
@@ -753,8 +721,6 @@ Scaled: 0 0x0  images/ninja.png
             <span class="p">}</span>
         <span class="p">}</span>   
     <span class="p">}</span>
-
-    <span class="c1">// conversion table, there may be better out there ie https://www.billmongan.com/Ursinus-CS173-Fall2020/Labs/ASCIIArt</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">asciiChar</span><span class="p">(</span><span class="kt">double</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">" "</span><span class="p">;</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">g</span> <span class="o">&gt;=</span> <span class="mi">240</span><span class="p">)</span> <span class="p">{</span>
