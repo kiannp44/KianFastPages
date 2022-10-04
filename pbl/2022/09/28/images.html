@@ -221,11 +221,15 @@ window.onload = wrap_img;
 <span class="kn">import</span> <span class="nn">javax.imageio.ImageTypeSpecifier</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pics</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">inDir</span> <span class="o">=</span> <span class="s">"images/"</span><span class="p">;</span> <span class="c1">// location of images</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">outDir</span> <span class="o">=</span> <span class="s">"images/tmp/"</span><span class="p">;</span>  <span class="c1">// location of created files</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">inFile</span><span class="p">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">resizedFile</span><span class="p">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">asciiFile</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">inDir</span> <span class="o">=</span> <span class="s">"images/"</span><span class="p">;</span> <span class="c1">// location of images</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">outDir</span> <span class="o">=</span> <span class="s">"images/tmp/"</span><span class="p">;</span>  <span class="c1">// location of created files</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">greyDir</span> <span class="o">=</span> <span class="s">"images/tmp/greyscale/"</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">redDir</span> <span class="o">=</span> <span class="s">"images/tmp/red/"</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">blueDir</span> <span class="o">=</span> <span class="s">"images/tmp/blue/"</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">greenDir</span> <span class="o">=</span> <span class="s">"images/tmp/green/"</span><span class="p">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">ext</span><span class="p">;</span>   <span class="c1">// extension of file</span>
     <span class="kd">private</span> <span class="kt">long</span> <span class="n">bytes</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
@@ -659,7 +663,6 @@ Scaled: 5115 53x53  images/tmp/ninja.png
                     <span class="n">blueImg</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">newColor</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
@@ -674,7 +677,7 @@ Scaled: 5115 53x53  images/tmp/ninja.png
         <span class="k">this</span><span class="p">.</span><span class="na">setStats</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="c1">// convert every pixel to an ascii character (ratio does not seem correct)</span>
+    <span class="c1">// convert every pixel to an ascii character</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">convertToAscii</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
         <span class="n">PrintWriter</span> <span class="n">asciiPrt</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
@@ -756,6 +759,10 @@ Scaled: 5115 53x53  images/tmp/ninja.png
         <span class="n">hawaii</span><span class="p">.</span><span class="na">resize</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
         <span class="n">hawaii</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"Scaled"</span><span class="p">);</span>
         <span class="n">hawaii</span><span class="p">.</span><span class="na">convertToAscii</span><span class="p">();</span>
+        <span class="n">hawaii</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"redscale"</span><span class="p">);</span>
+        <span class="n">hawaii</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"bluescale"</span><span class="p">);</span>
+        <span class="n">hawaii</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"greenscale"</span><span class="p">);</span>
+        <span class="n">hawaii</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"greyscale"</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">Pics</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
@@ -773,6 +780,10 @@ Scaled: 5115 53x53  images/tmp/ninja.png
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Original: 7303 1600x900  images/tmp/blue/hawaii_blue.png
 Scaled: 1163 528x297  images/tmp/hawaii.png
+redscale: 1163 528x297  images/tmp/hawaii.png
+bluescale: 1163 528x297  images/tmp/hawaii.png
+greenscale: 1163 528x297  images/tmp/hawaii.png
+greyscale: 1163 528x297  images/tmp/hawaii.png
 </pre>
 </div>
 </div>
