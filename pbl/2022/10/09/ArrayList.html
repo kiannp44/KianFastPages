@@ -291,8 +291,8 @@ New Student 5
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">student_list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">student_list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span> 
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
   <span class="p">{</span>
       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">student_list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
   <span class="p">}</span>
@@ -307,16 +307,29 @@ New Student 5
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Kian P
+2nd Student
+Samuel W
+4th Student
+Evan S
+Calissa T
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">java.lang.IndexOutOfBoundsException: Index 7 out of bounds for length 7</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.IndexOutOfBoundsException: Index 6 out of bounds for length 6</span>
 <span class="ansi-red-intense-fg ansi-bold">	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)</span>
 <span class="ansi-red-intense-fg ansi-bold">	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)</span>
 <span class="ansi-red-intense-fg ansi-bold">	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)</span>
 <span class="ansi-red-intense-fg ansi-bold">	at java.base/java.util.Objects.checkIndex(Objects.java:372)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at java.base/java.util.ArrayList.remove(ArrayList.java:536)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at .(#154:1)</span></pre>
+<span class="ansi-red-intense-fg ansi-bold">	at java.base/java.util.ArrayList.get(ArrayList.java:459)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#152:4)</span></pre>
 </div>
 </div>
 
