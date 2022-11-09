@@ -28,11 +28,27 @@ const options = {
 fetch('https://world-population.p.rapidapi.com/population?country_name=Canada', options)
 	.then(response => response.json())
     .then(response => {
-		document.getElementById("canadaPopulation").innerHTML = response.body.country_name;
+		document.getElementById("canadaPopulation").innerHTML = response.body.world_population;
 	})
 	.catch(err => console.error(err));
 
     function updatePeople() {
 	document.getElementById("canadaPopulation").innerHTML = parseInt(document.getElementById("canadaPopulation").innerHTML) + 11
 } setInterval(updatePeople, 100)
+
+
+
+//Clock
+
+let clockElement = document.getElementById('clock')
+
+clock();
+
+function clock() {
+    let date = new Date();
+    clockElement.textContent = date.toLocaleString();
+}
+
+setInterval(clock, 1000);
+
 </script>
