@@ -13,7 +13,7 @@
   
     
         ,"post1": {
-            "title": "Unit 6 Hw",
+            "title": "Unit 6 Hw Arrays",
             "content": "FRQ . public void addMembers(String[] names, int gradYear) { for (int i = 0; i&lt;names.length; i++) { memberList.add(new Member(names[i], gradYear, true)); } } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit6.html",
             "relUrl": "/collegeboard/2022/11/01/unit6.html",
@@ -24,7 +24,7 @@
   
     
         ,"post2": {
-            "title": "Unit 5 Hw",
+            "title": "Unit 5 Hw Using Classes",
             "content": "public class StepTracker { private double Steps = 0; private int activeDays = 0; private int totalDays = 0; private double cutoff = 0; public StepTracker (double Steps) { this.cutoff = Steps; } public void addDailySteps (int Steps) { this.Steps = this.Steps + Steps; if (Steps &gt;= cutoff) { this.activeDays++; } this.totalDays++; } public int activeDays () { return activeDays; } public double averageSteps() { return this.Steps/totalDays; } public static void main (String[] args) { StepTracker tr = new StepTracker(10000); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); tr.addDailySteps(9000); tr.addDailySteps(5000); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); tr.addDailySteps(13000); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); tr.addDailySteps(23000); tr.addDailySteps(1111); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); } } StepTracker.main(null); .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit5.html",
             "relUrl": "/collegeboard/2022/11/01/unit5.html",
@@ -35,7 +35,7 @@
   
     
         ,"post3": {
-            "title": "Unit 4 Hw",
+            "title": "Unit 4 Hw Iteration",
             "content": "public class CaesarCipher { public static String decode (String message) { String decoded = &quot;&quot;; for (int i = 0; i&lt;message.length(); i++) { if (message.charAt(i) &lt; &#39;a&#39; || message.charAt(i) &gt; &#39;z&#39;) { decoded += message.charAt(i); continue; } int letter = message.charAt(i)-&#39;a&#39;; int new_letter = (letter+3)%26; decoded += (char)(new_letter+&#39;a&#39;); } return decoded; } public static void main(String[] args) { String message1 = &quot;kfzb gly!&quot;; System.out.println(decode(message1)); String message2 = &quot;zlab zlab zlab&quot;; System.out.println(decode(message2)); String message3 = &quot;prmbozxifcoxdfifpqfzbumfxifalzflrp&quot;; System.out.println(decode(message3)); } } CaesarCipher.main(null); . nice job! code code code supercalifragilisticexpialidocious .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit4hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit4hw.html",
@@ -46,7 +46,7 @@
   
     
         ,"post4": {
-            "title": "Unit 3 Hw",
+            "title": "Unit 3 Hw Booleans/If Statements",
             "content": "public static int numberOfLeapYears(int year1, int year2) { int count = 0; for (int i = year1; i &lt;= year2; i++) { // add to count if year is leap year if (isLeapYear(i)) count++; } return count; } . public static int dayOfWeek(int month, int day, int year) { int day = firstDayOfYear(year) + dayOfYear(month, day, year) - 1; // only 7 days in a week return day % 7; } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit3hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit3hw.html",
@@ -57,7 +57,7 @@
   
     
         ,"post5": {
-            "title": "Unit 2 Hw",
+            "title": "Unit 2 Hw Objects",
             "content": ". FRQ . public int scoreGuess( String guess ) { int val = 0; int len = guess.length(); for( int i = 0; i &lt;= secret.length()-len; i+=1) { String ck = secret.substring( i, i+len ); if( ck.equals(guess) ) val++; } return val*len*len; } . public String findBetterGuess(String guess1, String guess2 ) { int a = scoreGuess( guess1 ); int b = scoreGuess( guess2 ); if( a &gt; b ) return guess1; if( b &gt; a ) return guess2; if( guess1.compareTo( guess2 ) &gt; 0 ) return guess1; return guess2; } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit2hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit2hw.html",
@@ -68,7 +68,7 @@
   
     
         ,"post6": {
-            "title": "Unit 1 Hw",
+            "title": "Unit 1 Hw - Primitives",
             "content": "",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit1hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit1hw.html",
