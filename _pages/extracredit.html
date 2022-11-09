@@ -28,7 +28,7 @@ const options = {
 fetch('https://world-population.p.rapidapi.com/population?country_name=Canada', options)
 	.then(response => response.json())
     .then(response => {
-		document.getElementById("canadaPopulation").innerHTML = response.body.world_population;
+		document.getElementById("canadaPopulation").innerHTML = response.body.country_name;
 	})
 	.catch(err => console.error(err));
 
