@@ -88,6 +88,22 @@ window.onload = wrap_img;
 
 <script>
 
+//Clock
+
+let clockElement = document.getElementById('clock')
+
+clock();
+
+function clock() {
+    let date = new Date();
+    clockElement.textContent = date.toLocaleString();
+}
+
+setInterval(clock, 1000);
+
+
+// Populations
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -107,19 +123,6 @@ fetch('https://world-population.p.rapidapi.com/population?country_name=Mexico', 
 	document.getElementById("mexicoPopulation").innerHTML = parseInt(document.getElementById("mexicoPopulation").innerHTML) + 11
 } setInterval(popCheck, 100)
 
-
-//Clock
-
-let clockElement = document.getElementById('clock')
-
-clock();
-
-function clock() {
-    let date = new Date();
-    clockElement.textContent = date.toLocaleString();
-}
-
-setInterval(clock, 1000);
 
 </script>
   </div>
