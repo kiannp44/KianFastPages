@@ -99,7 +99,7 @@ const options = {
 fetch('https://world-population.p.rapidapi.com/population?country_name=Mexico', options)
 	.then(response => response.json())
     .then(response => {
-		document.getElementById("mexicoPopulation").innerHTML = response.body.world_population;
+		document.getElementById("mexicoPopulation").innerHTML = response.body.population;
 	})
 	.catch(err => console.error(err));
 
