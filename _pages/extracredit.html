@@ -1,30 +1,38 @@
-<py-script>
-import threading  # import threading
+---
+layout: page
+title: 
+permalink: /updating/
+---
+<p id="clock"></p>
 
-def keepUpdating(): # build a function to run over and over
-# global variable setup
-    global run  
-try: run
-except: run = 0
+<table>
+	<tr>
+		<th>World Population</th>
+	</tr>
+	<tr>
+		<td id="canadaPopulation"></td>
+	</tr>
+</table>
 
-print("Seconds:", run)  # replace this line with updates to data
-run += 3  # this is update to global variable
-threading.Timer(3.0, keepUpdating).start()
-
-keepUpdating()  # you need to call this function at application startup
-</py-script>
 
 <script>
-// Clock Control
-    // clockElement global element set for convenience
-    let clockElement = document.getElementById('clock')
-    // Execute clock function on load
-    clock();
-    // Clock update executes on each interval set by timer
-function clock() {
-    let date = new Date();
-    clockElement.textContent = date.toLocaleString();
-}
-// Clock refresh timer, a reoccurring event
-setInterval(clock, 1000);
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '74bd99649amsha1c396dfa85e888p1c1773jsn35b095711d42',
+		'X-RapidAPI-Host': 'world-population.p.rapidapi.com'
+	}
+};
+
+fetch('https://world-population.p.rapidapi.com/population?country_name=Canada', options)
+	.then(response => response.json())
+    .then(response => {
+		document.getElementById("canadaPopulation").innerHTML = response.body.world_population;
+	})
+	.catch(err => console.error(err));
+
+    function updatePeople() {
+	document.getElementById("canadaPopulation").innerHTML = parseInt(document.getElementById("canadaPopulation").innerHTML) + 11
+} setInterval(updatePeople, 100)
 </script>
