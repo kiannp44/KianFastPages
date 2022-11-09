@@ -259,18 +259,29 @@
   
 
   
+      ,"page8": {
+          "title": "Updating",
+          "content": ". World Population . | .",
+          "url": "https://kiannp44.github.io/KianFastPages/updating/",
+          "relUrl": "/updating/",
+          "date": ""
+      }
+      
   
 
   
   
 
   
+  
+
+  
 
   
   
 
   
-      ,"page12": {
+      ,"page13": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://kiannp44.github.io/KianFastPages/robots.txt",

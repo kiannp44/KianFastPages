@@ -4,18 +4,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>About Me | Kians Fastpages</title>
+<title>Updating | Kians Fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="About Me" />
+<meta property="og:title" content="Updating" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://kiannp44.github.io/KianFastPages/about/" />
-<meta property="og:url" content="https://kiannp44.github.io/KianFastPages/about/" />
+<link rel="canonical" href="https://kiannp44.github.io/KianFastPages/updating/" />
+<meta property="og:url" content="https://kiannp44.github.io/KianFastPages/updating/" />
 <meta property="og:site_name" content="Kians Fastpages" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About Me" />
+<meta property="twitter:title" content="Updating" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"About Me","name":"Kians Fastpages","url":"https://kiannp44.github.io/KianFastPages/about/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Updating","url":"https://kiannp44.github.io/KianFastPages/updating/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/KianFastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kiannp44.github.io/KianFastPages/feed.xml" title="Kians Fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/KianFastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -70,20 +70,57 @@ window.onload = wrap_img;
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About Me</h1>
+    <h1 class="post-title">Updating</h1>
   </header>
 
   <div class="post-content">
-    <p>This website is powered by <strong><a href="https://github.com/fastai/fastpages">fastpages</a></strong> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+    <p id="clock"></p>
 
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>a blogging platform that natively supports Jupyter notebooks in addition to other formats. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<table>
+	<tr>
+		<th>World Population</th>
+	</tr>
+	<tr>
+		<td id="worldPopulation"></td>
+	</tr>
+</table>
 
+
+<script>
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '74bd99649amsha1c396dfa85e888p1c1773jsn35b095711d42',
+		'X-RapidAPI-Host': 'world-population.p.rapidapi.com'
+	}
+};
+
+fetch('https://world-population.p.rapidapi.com/worldpopulation', options)
+	.then(response => response.json())
+	.then(response => {
+		document.getElementById("worldPopulation").innerHTML = response.body.world_population;
+	})
+	.catch(err => console.error(err));
+
+function updatePeople() {
+	document.getElementById("worldPopulation").innerHTML = parseInt(document.getElementById("worldPopulation").innerHTML) + 11
+} setInterval(updatePeople, 100)
+
+// Clock Control
+// clockElement global element set for convenience
+let clockElement = document.getElementById('clock')
+// Execute clock function on load
+clock();
+// Clock update executes on each interval set by timer
+function clock() {
+    let date = new Date();
+    clockElement.textContent = date.toLocaleString();
+}
+// Clock refresh timer, a reoccurring event
+setInterval(clock, 1000);
+
+</script>
   </div>
 
 </article>
