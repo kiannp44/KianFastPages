@@ -7,10 +7,10 @@ permalink: /populations/
 
 <table>
 	<tr>
-		<th>Canada Population</th>
+		<th>Mexico Population</th>
 	</tr>
 	<tr>
-		<td id="canadaPopulation"></td>
+		<td id="mexicoPopulation"></td>
 	</tr>
 </table>
 
@@ -25,15 +25,15 @@ const options = {
 	}
 };
 
-fetch('https://world-population.p.rapidapi.com/population?country_name=Canada', options)
+fetch('https://world-population.p.rapidapi.com/population?country_name=Mexico', options)
 	.then(response => response.json())
     .then(response => {
-		document.getElementById("canadaPopulation").innerHTML = response.body.world_population;
+		document.getElementById("mexicoPopulation").innerHTML = response.body.world_population;
 	})
 	.catch(err => console.error(err));
 
     function popCheck() {
-	document.getElementById("canadaPopulation").innerHTML = parseInt(document.getElementById("canadaPopulation").innerHTML) + 11
+	document.getElementById("mexicoPopulation").innerHTML = parseInt(document.getElementById("mexicoPopulation").innerHTML) + 11
 } setInterval(popCheck, 100)
 
 
