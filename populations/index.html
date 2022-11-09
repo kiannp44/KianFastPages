@@ -104,7 +104,7 @@ fetch('https://world-population.p.rapidapi.com/population?country_name=Canada', 
 	.catch(err => console.error(err));
 
     function popCheck() {
-	document.getElementById("canadaPopulation").innerHTML = parseInt(document.getElementById("canadaPopulation").innerHTML) + 11
+	document.getElementById("canadaPopulation").innerHTML
 } setInterval(popCheck, 100)
 
 
