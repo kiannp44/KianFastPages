@@ -39,7 +39,8 @@ baseurl: "/KianFastPages" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
-    github: kiannp44
+    - { platform: github,  user_url: "https://github.com/jekyll/jekyll" }
+    - { platform: twitter, user_url: "https://twitter.com/jekyllrb" }
 
 # Set this to true to get LaTeX math equation support
 use_math: 
