@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Vocab",
-            "content": "",
+            "content": "Unit 1 . Unit 2 . Unit 3 . Unit 4 . Unit 5 .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/29/vocab.html",
             "relUrl": "/collegeboard/2022/11/29/vocab.html",
             "date": " • Nov 29, 2022"
@@ -35,7 +35,7 @@
   
     
         ,"post3": {
-            "title": "Unit 6 Hw Arrays",
+            "title": "Unit 6 Arrays",
             "content": "FRQ . public void addMembers(String[] names, int gradYear) { for (int i = 0; i&lt;names.length; i++) { memberList.add(new Member(names[i], gradYear, true)); } } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit6.html",
             "relUrl": "/collegeboard/2022/11/01/unit6.html",
@@ -46,7 +46,7 @@
   
     
         ,"post4": {
-            "title": "Unit 5 Hw Using Classes",
+            "title": "Unit 5 Using Classes",
             "content": "public class StepTracker { private double Steps = 0; private int activeDays = 0; private int totalDays = 0; private double cutoff = 0; public StepTracker (double Steps) { this.cutoff = Steps; } public void addDailySteps (int Steps) { this.Steps = this.Steps + Steps; if (Steps &gt;= cutoff) { this.activeDays++; } this.totalDays++; } public int activeDays () { return activeDays; } public double averageSteps() { return this.Steps/totalDays; } public static void main (String[] args) { StepTracker tr = new StepTracker(10000); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); tr.addDailySteps(9000); tr.addDailySteps(5000); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); tr.addDailySteps(13000); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); tr.addDailySteps(23000); tr.addDailySteps(1111); System.out.println(tr.activeDays()); System.out.println(tr.averageSteps()); } } StepTracker.main(null); .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit5.html",
             "relUrl": "/collegeboard/2022/11/01/unit5.html",
@@ -57,7 +57,7 @@
   
     
         ,"post5": {
-            "title": "Unit 4 Hw Iteration",
+            "title": "Unit 4 Iteration",
             "content": "public class CaesarCipher { public static String decode (String message) { String decoded = &quot;&quot;; for (int i = 0; i&lt;message.length(); i++) { if (message.charAt(i) &lt; &#39;a&#39; || message.charAt(i) &gt; &#39;z&#39;) { decoded += message.charAt(i); continue; } int letter = message.charAt(i)-&#39;a&#39;; int new_letter = (letter+3)%26; decoded += (char)(new_letter+&#39;a&#39;); } return decoded; } public static void main(String[] args) { String message1 = &quot;kfzb gly!&quot;; System.out.println(decode(message1)); String message2 = &quot;zlab zlab zlab&quot;; System.out.println(decode(message2)); String message3 = &quot;prmbozxifcoxdfifpqfzbumfxifalzflrp&quot;; System.out.println(decode(message3)); } } CaesarCipher.main(null); . nice job! code code code supercalifragilisticexpialidocious .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit4hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit4hw.html",
@@ -68,7 +68,7 @@
   
     
         ,"post6": {
-            "title": "Unit 3 Hw Booleans/If Statements",
+            "title": "Unit 3 Booleans/If Statements",
             "content": "public static int numberOfLeapYears(int year1, int year2) { int count = 0; for (int i = year1; i &lt;= year2; i++) { // add to count if year is leap year if (isLeapYear(i)) count++; } return count; } . public static int dayOfWeek(int month, int day, int year) { int day = firstDayOfYear(year) + dayOfYear(month, day, year) - 1; // only 7 days in a week return day % 7; } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit3hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit3hw.html",
@@ -79,7 +79,7 @@
   
     
         ,"post7": {
-            "title": "Unit 2 Hw Objects",
+            "title": "Unit 2 Objects",
             "content": ". FRQ . public int scoreGuess( String guess ) { int val = 0; int len = guess.length(); for( int i = 0; i &lt;= secret.length()-len; i+=1) { String ck = secret.substring( i, i+len ); if( ck.equals(guess) ) val++; } return val*len*len; } . public String findBetterGuess(String guess1, String guess2 ) { int a = scoreGuess( guess1 ); int b = scoreGuess( guess2 ); if( a &gt; b ) return guess1; if( b &gt; a ) return guess2; if( guess1.compareTo( guess2 ) &gt; 0 ) return guess1; return guess2; } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit2hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit2hw.html",
@@ -90,7 +90,7 @@
   
     
         ,"post8": {
-            "title": "Unit 1 Hw - Primitives",
+            "title": "Unit 1 Primitives",
             "content": "All code that runs must be in the main method | Data types are different categories in which one can store various types of data. The main Primitve data types are: Integer (int): used for whole numbers Double (double): used for numbers with decimals Boolean (boolean): used for true or false conditionals For Primitive types, variables store actual data instead of reference If the variable is declared final, it cannot be edited A non Primitive type which is commonly used is String Stores text | To comment your code, use // for single line comments and /**/ for multiple lines | . In order to perform mathmatical calculations on integers and doubles, you can use operators | Main ones are +, -, *, / | Modulus is %, used to get remainder when two numbers are divided | public class Math { public static void main(String[] args) { int number = 2; int number2 = 5; double number3 = 2.0; double number4 = 5.0; System.out.println(number+number2); System.out.println(number3+number4); System.out.println(number-number2); System.out.println(number3-number4); System.out.println(number * number2); System.out.println(number3 * number4); System.out.println(number/number2); System.out.println(number3/number4); System.out.println(number4 % number3); System.out.println(number2 % number); } } Math.main(null); . 7 7.0 -3 -3.0 10 10.0 0 0.4 1.0 1 . Compute the remainder of 6 multiplied by 1234124 divided by 11345 minus 890809 plus 90800 (use order of operations) is divided by 980098, and store this in a variable called num (get an exact number as opposed to a whole number) . public class Cast { public static void main(String[] args) { double num = 10.5; int num2 = 100; int numInt = (int)num; double num2Double = (double)num2; System.out.println(num); System.out.println(num2); System.out.println(numInt); System.out.println(num2Double); System.out.println(Integer.MAX_VALUE); System.out.println(Integer.MIN_VALUE); } } Cast.main(null); . 10.5 100 10 100.0 2147483647 -2147483648 .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit1hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit1hw.html",
