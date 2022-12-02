@@ -142,6 +142,89 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Objects are instances of Classes, which are like a template of data (attributes) and functions (methods)</li>
+<li>Objects are created and their contents, which are pulled from the class, is used in code</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tennis</span> <span class="p">{</span> <span class="c1">// class creation</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printPlayers</span><span class="p">(){</span>   <span class="c1">// simple method</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nadal"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Federer"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Djokovic"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>  <span class="c1">// main class that runs</span>
+        <span class="n">Tennis</span> <span class="n">myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Tennis</span><span class="p">();</span>    <span class="c1">// CREATING AN OBJECT FROM TENNIS CLASS</span>
+        <span class="n">myObject</span><span class="p">.</span><span class="na">printPlayers</span><span class="p">();</span>      <span class="c1">// Use dot notation to reference methods/attributes from the class that the object is initialized from</span>
+    <span class="p">}</span>   
+
+<span class="p">}</span>
+
+<span class="n">Tennis</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Extending another Class inherits all of the methods and attributes from that class.</li>
+<li>Class being extended is called the super class</li>
+<li>Class extending is called subclass</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TennisTwo</span> <span class="kd">extends</span> <span class="n">Tennis</span><span class="p">{</span>  <span class="c1">// extending Tennis class</span>
+    <span class="kd">public</span> <span class="nf">TennisTwo</span><span class="p">(){</span>    <span class="c1">// TennisTwo now has all of Tennis's methods</span>
+        <span class="kd">super</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>  <span class="c1">// main class that runs</span>
+        <span class="n">TennisTwo</span> <span class="n">myObjectTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TennisTwo</span><span class="p">();</span>    <span class="c1">// CREATING AN OBJECT FROM TENNISTWO CLASS</span>
+        <span class="n">myObjectTwo</span><span class="p">.</span><span class="na">printPlayers</span><span class="p">();</span>      <span class="c1">// Use dot notation to reference methods/attributes from the INHERITED class</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">TennisTwo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="FRQ">
 <a class="anchor" href="#FRQ" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ<a class="anchor-link" href="#FRQ"> </a>
 </h1>
