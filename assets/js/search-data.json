@@ -80,7 +80,7 @@
     
         ,"post7": {
             "title": "Unit 3 Booleans/If Statements",
-            "content": "public static int numberOfLeapYears(int year1, int year2) { int count = 0; for (int i = year1; i &lt;= year2; i++) { // add to count if year is leap year if (isLeapYear(i)) count++; } return count; } . public static int dayOfWeek(int month, int day, int year) { int day = firstDayOfYear(year) + dayOfYear(month, day, year) - 1; // only 7 days in a week return day % 7; } .",
+            "content": ". public static int numberOfLeapYears(int year1, int year2) { int count = 0; for (int i = year1; i &lt;= year2; i++) { // add to count if year is leap year if (isLeapYear(i)) count++; } return count; } . public static int dayOfWeek(int month, int day, int year) { int day = firstDayOfYear(year) + dayOfYear(month, day, year) - 1; // only 7 days in a week return day % 7; } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit3hw.html",
             "relUrl": "/collegeboard/2022/11/01/unit3hw.html",
             "date": " • Nov 1, 2022"
