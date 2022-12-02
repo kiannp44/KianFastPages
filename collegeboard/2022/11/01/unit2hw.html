@@ -225,6 +225,80 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>Comparing Objects</mark></p>
+<ul>
+<li>equals and hashCode methods can be used to compare objects</li>
+<li>equals method compares equality of two objects
+### Example</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.*</span><span class="p">;</span>
+ 
+<span class="kd">class</span> <span class="nc">Pet</span> <span class="p">{</span>
+
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">breed</span><span class="p">;</span>
+ 
+
+    <span class="n">Pet</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">,</span> <span class="n">String</span> <span class="n">breed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">breed</span> <span class="o">=</span> <span class="n">breed</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span>
+    <span class="p">{</span>
+ 
+        <span class="n">Pet</span> <span class="n">dog1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pet</span><span class="p">(</span><span class="s">"Snow"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"German Shepherd"</span><span class="p">);</span>
+        <span class="n">Pet</span> <span class="n">cat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pet</span><span class="p">(</span><span class="s">"Jack"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"Tabby"</span><span class="p">);</span>
+        <span class="n">Pet</span> <span class="n">dog2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pet</span><span class="p">(</span><span class="s">"Snow"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"German Shepherd"</span><span class="p">);</span>
+ 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">dog2</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="FRQ">
 <a class="anchor" href="#FRQ" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ<a class="anchor-link" href="#FRQ"> </a>
 </h1>
