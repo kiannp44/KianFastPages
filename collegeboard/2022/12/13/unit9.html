@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -145,6 +145,136 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="p">{</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="n">brandName</span><span class="p">;</span>
+    <span class="kd">protected</span> <span class="kt">double</span> <span class="n">range</span><span class="p">;</span>
+    <span class="kd">protected</span> <span class="kt">double</span> <span class="n">doorNumber</span><span class="p">;</span>
+    <span class="kd">protected</span> <span class="kt">double</span> <span class="n">maxSpeed</span><span class="p">;</span>
+    
+    <span class="c1">// Constructor for the attributes present in the superclass</span>
+    <span class="kd">public</span> <span class="nf">Car</span><span class="p">(</span><span class="n">String</span> <span class="n">brandName</span><span class="p">,</span> <span class="kt">double</span> <span class="n">range</span><span class="p">,</span> <span class="kt">double</span> <span class="n">doorNumber</span><span class="p">,</span> <span class="kt">double</span> <span class="n">maxSpeed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">brandName</span> <span class="o">=</span> <span class="n">brandName</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">range</span> <span class="o">=</span> <span class="n">range</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">doorNumber</span> <span class="o">=</span> <span class="n">doorNumber</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">gas</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Go!"</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">brake</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Stop!"</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">gearShift</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Use the stick"</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">steer</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning left..."</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">horn</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"honking... "</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TeslaModelS</span> <span class="kd">extends</span> <span class="n">Car</span> <span class="p">{</span>
+    <span class="c1">// Additional attribute not present in the superclass</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="n">hornSound</span><span class="p">;</span> 
+    
+    <span class="c1">// Constructor for Subclass</span>
+    <span class="kd">public</span> <span class="nf">TeslaModelS</span><span class="p">(</span><span class="n">String</span> <span class="n">brandName</span><span class="p">,</span> <span class="kt">double</span> <span class="n">range</span><span class="p">,</span> <span class="kt">double</span> <span class="n">doorNumber</span><span class="p">,</span> <span class="kt">double</span> <span class="n">maxSpeed</span><span class="p">,</span> <span class="n">String</span> <span class="n">hornSound</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// We use the Superclass constructor for the shared attributes through the keyword "super"</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">brandName</span><span class="p">,</span> <span class="n">range</span><span class="p">,</span> <span class="n">doorNumber</span><span class="p">,</span> <span class="n">maxSpeed</span><span class="p">);</span>
+        <span class="c1">// hornSound is not in the Superclass, so we add it separately in the constructor</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hornSound</span> <span class="o">=</span> <span class="n">hornSound</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// We use override to change the functionality in the subclass of an existing method in the superclass</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">gearShift</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Use the gear selector next to the wheel"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">steer</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning right..."</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// Here, we don't fully change the functionality of the existing horn method in the superclass</span>
+    <span class="c1">// Instead, we take all of the functionality of the superclass method, and then add on to it</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">horn</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">horn</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">hornSound</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 5 argument constructor</span>
+        <span class="n">TeslaModelS</span> <span class="n">modelS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TeslaModelS</span><span class="p">(</span><span class="s">"Tesla"</span><span class="p">,</span> <span class="mi">396</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s">"eugh"</span><span class="p">);</span>
+        <span class="c1">// Example of late binding</span>
+        <span class="n">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TeslaModelS</span><span class="p">(</span><span class="s">"Tesla"</span><span class="p">,</span> <span class="mi">396</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s">"brrr"</span><span class="p">);</span>
+        <span class="c1">// We can still use the methods from the child class, even though we didn't mention them in the subclass!</span>
+        <span class="n">modelS</span><span class="p">.</span><span class="na">gas</span><span class="p">();</span>
+        <span class="c1">// Using the overridden method</span>
+        <span class="n">modelS</span><span class="p">.</span><span class="na">gearShift</span><span class="p">();</span>
+        <span class="n">modelS</span><span class="p">.</span><span class="na">steer</span><span class="p">();</span>
+        <span class="c1">// Using the method we added on to</span>
+        <span class="n">modelS</span><span class="p">.</span><span class="na">horn</span><span class="p">();</span>
+        <span class="n">car</span><span class="p">.</span><span class="na">horn</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    
+<span class="p">}</span>
+<span class="n">TeslaModelS</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Go!
+Use the gear selector next to the wheel
+turning right...
+honking... eugh
+honking... brrr
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
