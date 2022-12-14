@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "FRQ 2019",
-            "content": "Part A . public LightBoard(int numRows, int numCols) { lights = new boolean[numRows][numCols]; for (int r = 0; r &lt; numRows; r++) { for (int c = 0; c &lt; numCols; c++) { double onoff = Math.random(); lights[r][c] = onoff &lt; 0.4; } } } . Part B . public boolean evaluateLight(int row, int col){ int lightsOn = 0; for (int r = 0; r &lt; lights.length; r++){ if (lights[r][col]){ lightsOn++; } } if (lights[row][col] &amp;&amp; lightsOn % 2 == 0){ return false; } if (!lights[row][col] &amp;&amp; lightsOn % 3 == 0){ return true; } return lights[row][col]; } .",
+            "content": "public class LightBoard { private boolean[][] lights; public LightBoard(int numRows, int numCols) { lights = new boolean[numRows][numCols]; for(int i = 0; i &lt; lights.length; i++) { for(int j = 0; j &lt; lights[i].length; j++){ if (Math.random() &lt; 0.4) { lights[i][j] = true; } else { lights[i][j] = false; } } } } public boolean evaluateLight(int row, int col) { int counter = 0; for(int i = 0; i &lt; lights.length; i++) if(lights[i][col] == true){ counter++; } if( counter % 2 == 0){ return false; } else if(counter % 3 == 0){ return true; } else{ return lights[row][col]; } } } LightBoard x = new LightBoard(4,4); System.out.println(x.evaluateLight(0,0)); System.out.println(x.evaluateLight(0,1)); System.out.println(x.evaluateLight(1,2)); . false false false .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/12/13/FRQ44.html",
             "relUrl": "/collegeboard/2022/12/13/FRQ44.html",
             "date": " • Dec 13, 2022"
