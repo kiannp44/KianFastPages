@@ -91,7 +91,7 @@
     
         ,"post8": {
             "title": "Unit 6 Arrays",
-            "content": "FRQ . public void addMembers(String[] names, int gradYear) { for (int i = 0; i&lt;names.length; i++) { memberList.add(new Member(names[i], gradYear, true)); } } .",
+            "content": "For loop: examines and iterates over every element the array contains in a fast, effective, and more controllable way. | While loop: initialize an array of integers, and traverse the array from start to end using while loop. Start with an index of zero, condition that index is less than the length of array, and increment index inside while loop. | Mutator methods: reset the value of a private variable so that other classes can modify a value stored in the variable without direct access | . /* for loop */ String[] cars = {&quot;Volvo&quot;, &quot;BMW&quot;, &quot;Ford&quot;, &quot;Mazda&quot;}; for (int i = 0; i &lt; cars.length; i++) { System.out.println(cars[i]); } . Volvo BMW Ford Mazda . public class ArrayExample { public static void main(String[] args) { int[] numbers = {2, 4, 6, 8, 10}; int index = 0; while (index &lt; numbers.length) { System.out.println(numbers[index]); index++; } } } ArrayExample.main(null); . 2 4 6 8 10 . FRQ . public void addMembers(String[] names, int gradYear) { for (int i = 0; i&lt;names.length; i++) { memberList.add(new Member(names[i], gradYear, true)); } } .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2022/11/01/unit6.html",
             "relUrl": "/collegeboard/2022/11/01/unit6.html",
             "date": " • Nov 1, 2022"
