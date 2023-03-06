@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Binary Add",
-            "content": "public class BinaryAddition { public static void main(String[] args) { int a = 0b1; // binary representation of 1 int b = 0b1; // binary representation of 1 // perform binary addition int sum = a + b; // print result in binary and decimal System.out.println(&quot;Binary: &quot; + Integer.toBinaryString(sum)); System.out.println(&quot;Decimal: &quot; + sum); } } .",
+            "content": "int a = 1; int b = 1; int sum = a+b; System.out.println(&quot;Operation: 1 + 1&quot;); System.out.println(&quot;Decimal Sum: &quot; + sum); // Print Decimal Sum System.out.println(&quot;Binary Sum: &quot; + Integer.toBinaryString(sum)); // Print Converted to Binary Sum . Operation: 1 + 1 Decimal Sum: 2 Binary Sum: 10 .",
             "url": "https://kiannp44.github.io/KianFastPages/plb/2023/03/06/binaryadd.html",
             "relUrl": "/plb/2023/03/06/binaryadd.html",
             "date": " • Mar 6, 2023"
