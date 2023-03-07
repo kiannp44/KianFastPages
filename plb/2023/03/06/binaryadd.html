@@ -71,9 +71,8 @@
 
 <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Operation: 1 + 1"</span><span class="p">);</span> <span class="c1">// Operation Statement</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Decimal Sum: "</span> <span class="o">+</span> <span class="n">sum</span><span class="p">);</span> <span class="c1">// Print Decimal Sum</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Binary Sum: "</span> <span class="o">+</span> <span class="n">Integer</span><span class="p">.</span><span class="na">toBinaryString</span><span class="p">(</span><span class="n">sum</span><span class="p">));</span> <span class="c1">// Print Converted to Binary Sum</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Binary Sum: "</span> <span class="o">+</span> <span class="n">Integer</span><span class="p">.</span><span class="na">toBinaryString</span><span class="p">(</span><span class="n">sum</span><span class="p">));</span> <span class="c1">// Print and Convert to Binary Sum</span>
 </pre></div>
 
     </div>
@@ -86,9 +85,133 @@
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Operation: 1 + 1
-Decimal Sum: 2
+<pre>Decimal Sum: 2
 Binary Sum: 10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntByValue</span> <span class="p">{</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"In changeInt method"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\tBefore n += 10: n = "</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// prints 5</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\tAfter n += 10: n = "</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// prints 10</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Main method before changeInt(n): n = "</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// prints 5</span>
+        <span class="n">changeInt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Main method after changeInt(n): n = "</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// still prints 5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">IntByValue</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Main method before changeInt(n): n = 5
+In changeInt method
+	Before n += 10: n = 5
+	After n += 10: n = 15
+Main method after changeInt(n): n = 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntByReference</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">IntByReference</span><span class="p">(</span><span class="n">Integer</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swapToLowHighOrder</span><span class="p">(</span><span class="n">IntByReference</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">.</span><span class="na">value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="na">value</span><span class="p">;</span>
+            <span class="n">i</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">n0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">IntByReference</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntByReference</span><span class="p">(</span><span class="n">n0</span><span class="p">);</span>
+        <span class="n">IntByReference</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntByReference</span><span class="p">(</span><span class="n">n1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Before: "</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">.</span><span class="na">swapToLowHighOrder</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>  <span class="c1">// conditionally build swap method to change values of a, b</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After: "</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">ags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">IntByReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before: 21 16
+After: 16 21
+
+Before: 16 21
+After: 16 21
+
+Before: 16 -1
+After: -1 16
+
 </pre>
 </div>
 </div>
