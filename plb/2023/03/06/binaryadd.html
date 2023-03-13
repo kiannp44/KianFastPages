@@ -9,7 +9,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -407,6 +407,83 @@ Element 3 = false
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The random letter A-E is c
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WrapperClassesExample</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// int</span>
+        <span class="n">Integer</span> <span class="n">num</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">5</span><span class="p">)};</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The number is "</span> <span class="o">+</span> <span class="n">num</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The third element of the array is "</span> <span class="o">+</span> <span class="n">arr</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
+        
+        <span class="c1">// double</span>
+        <span class="n">Double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mf">1.99</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The double "</span> <span class="o">+</span> <span class="n">d</span><span class="p">);</span>
+        
+        <span class="c1">// boolean</span>
+        <span class="n">Boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Boolean</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The boolean is "</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        
+        <span class="c1">// char</span>
+        <span class="n">Character</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Character</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="sc">'z'</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The value of char is "</span> <span class="o">+</span> <span class="n">c</span><span class="p">);</span>
+        
+        <span class="c1">// Using substring method on String</span>
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">substr</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The substring is "</span> <span class="o">+</span> <span class="n">substr</span><span class="p">);</span>
+        
+        <span class="c1">// Generating random numbers</span>
+        <span class="n">Random</span> <span class="n">rand</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+        <span class="n">Integer</span> <span class="n">randNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">rand</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The random number is "</span> <span class="o">+</span> <span class="n">randNum</span><span class="p">);</span>
+        
+        <span class="c1">// Sorting an array</span>
+        <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The sorted array is "</span> <span class="o">+</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">WrapperClassesExample</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The number is 42
+The third element of the array is 3
+The double 1.99
+The boolean is true
+The value of char is z
+The substring is World
+The random number is 263
+The sorted array is [1, 2, 3, 4, 5]
 </pre>
 </div>
 </div>
