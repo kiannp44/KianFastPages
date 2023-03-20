@@ -9,7 +9,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      10 min read
     
 </span></p>
 
@@ -151,6 +151,75 @@
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/* This is wrapper class...</span>
+<span class="cm"> Objective would be to push more functionality into this Class to enforce consistent definition</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Generics</span> <span class="p">{</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">masterType</span> <span class="o">=</span> <span class="s">"Generic"</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">type</span><span class="p">;</span>	<span class="c1">// extender should define their data type</span>
+
+	<span class="c1">// generic enumerated interface</span>
+	<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">KeyTypes</span> <span class="p">{</span>
+		<span class="n">String</span> <span class="nf">name</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="kd">protected</span> <span class="kd">abstract</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">();</span>  	<span class="c1">// this method helps force usage of KeyTypes</span>
+
+	<span class="c1">// getter</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getMasterType</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">masterType</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// getter</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getType</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">type</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// setter</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setType</span><span class="p">(</span><span class="n">String</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="c1">// this method is used to establish key order</span>
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">();</span>
+
+	<span class="c1">// static print method used by extended classes</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">Generics</span><span class="o">[]</span> <span class="n">objs</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// print 'Object' properties</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">objs</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">objs</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+
+		<span class="c1">// print 'Generics' properties</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">objs</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">Generics</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">objs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>	<span class="c1">// Look at properties of 1st element</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+					<span class="n">obj</span><span class="p">.</span><span class="na">getMasterType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> 
+					<span class="n">obj</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span>
+					<span class="s">" listed by "</span> <span class="o">+</span>
+					<span class="n">obj</span><span class="p">.</span><span class="na">getKey</span><span class="p">());</span>
+		<span class="p">}</span>
+
+		<span class="c1">// print "Generics: Objects'</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">objs</span><span class="p">)</span>	<span class="c1">// observe that type is Opaque</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Stack</span><span class="p">;</span>
@@ -192,6 +261,431 @@
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Alphabet</span> <span class="kd">extends</span> <span class="n">Generics</span> <span class="p">{</span>
+	<span class="c1">// Class data</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>  <span class="c1">// static initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span><span class="n">Alphabet</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;}</span>
+	<span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span><span class="n">title</span><span class="p">,</span> <span class="n">letter</span><span class="p">}</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">26</span><span class="p">;</span>  <span class="c1">// constant used in data initialization</span>
+
+	<span class="c1">// Instance data</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">letter</span><span class="p">;</span>
+	
+	<span class="cm">/*</span>
+<span class="cm">	 * single letter object</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="nf">Alphabet</span><span class="p">(</span><span class="kt">char</span> <span class="n">letter</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"Alphabet"</span><span class="p">);</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">letter</span> <span class="o">=</span> <span class="n">letter</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="cm">/* 'Generics' requires getKey to help enforce KeyTypes usage */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Alphabet</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+
+	<span class="cm">/* 'Generics' requires toString override</span>
+<span class="cm">	 * toString provides data based off of Static Key setting</span>
+<span class="cm">	 */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">String</span> <span class="n">output</span><span class="o">=</span><span class="s">""</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">letter</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">letter</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">letter</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Test data initializer for upper case Alphabet</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">Alphabet</span><span class="o">[]</span> <span class="nf">alphabetData</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">Alphabet</span><span class="o">[]</span> <span class="n">alphabet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Alphabet</span><span class="o">[</span><span class="n">Alphabet</span><span class="p">.</span><span class="na">size</span><span class="o">]</span><span class="p">;</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">Alphabet</span><span class="p">.</span><span class="na">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">alphabet</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Alphabet</span><span class="p">(</span> <span class="p">(</span><span class="kt">char</span><span class="p">)(</span><span class="sc">'A'</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="p">);</span>
+		<span class="p">}</span> 	
+		<span class="k">return</span> <span class="n">alphabet</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="cm">/* </span>
+<span class="cm">	 * main to test Animal class</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="c1">// Inheritance Hierarchy</span>
+		<span class="n">Alphabet</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">alphabetData</span><span class="p">();</span>
+
+		<span class="c1">// print with title</span>
+		<span class="n">Alphabet</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+		<span class="n">Alphabet</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+		<span class="c1">// print letter only</span>
+		<span class="n">Alphabet</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">letter</span><span class="p">);</span>
+		<span class="n">Alphabet</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+<span class="p">}</span>
+<span class="n">Alphabet</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$12B$Alphabet; 26
+Generic: Alphabet listed by title
+Alphabet: A
+Alphabet: B
+Alphabet: C
+Alphabet: D
+Alphabet: E
+Alphabet: F
+Alphabet: G
+Alphabet: H
+Alphabet: I
+Alphabet: J
+Alphabet: K
+Alphabet: L
+Alphabet: M
+Alphabet: N
+Alphabet: O
+Alphabet: P
+Alphabet: Q
+Alphabet: R
+Alphabet: S
+Alphabet: T
+Alphabet: U
+Alphabet: V
+Alphabet: W
+Alphabet: X
+Alphabet: Y
+Alphabet: Z
+
+class [LREPL.$JShell$12B$Alphabet; 26
+Generic: Alphabet listed by letter
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cupcake</span> <span class="kd">extends</span> <span class="n">Generics</span> <span class="p">{</span>
+	<span class="c1">// Class data</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>  <span class="c1">// static initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span><span class="n">Cupcake</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;}</span>
+	<span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span><span class="n">title</span><span class="p">,</span> <span class="n">flavor</span><span class="p">,</span> <span class="n">frosting</span><span class="p">,</span> <span class="n">sprinkles</span><span class="p">}</span>
+
+	<span class="c1">// Instance data</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">frosting</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">sprinkles</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">flavor</span><span class="p">;</span>
+
+	<span class="c1">// Constructor</span>
+	<span class="n">Cupcake</span><span class="p">(</span><span class="n">String</span> <span class="n">frosting</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sprinkles</span><span class="p">,</span> <span class="n">String</span> <span class="n">flavor</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"Cupcake"</span><span class="p">);</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">frosting</span> <span class="o">=</span> <span class="n">frosting</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">sprinkles</span> <span class="o">=</span> <span class="n">sprinkles</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">flavor</span> <span class="o">=</span> <span class="n">flavor</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="cm">/* 'Generics' requires getKey to help enforce KeyTypes usage */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Cupcake</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+
+	<span class="cm">/* 'Generics' requires toString override</span>
+<span class="cm">	 * toString provides data based off of Static Key setting</span>
+<span class="cm">	 */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>		
+		<span class="n">String</span> <span class="n">output</span><span class="o">=</span><span class="s">""</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">flavor</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">flavor</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">frosting</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">frosting</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">sprinkles</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="s">"00"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">sprinkles</span><span class="p">;</span>
+			<span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">flavor</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">frosting</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">sprinkles</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Test data initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">Cupcake</span><span class="o">[]</span> <span class="nf">cupcakes</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">Cupcake</span><span class="o">[]</span><span class="p">{</span>
+				<span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Red"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s">"Red Velvet"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Orange"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"Orange"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Yellow"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s">"Lemon"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Green"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s">"Apple"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Blue"</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s">"Blueberry"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Purple"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s">"Blackberry"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Pink"</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">"Strawberry"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Tan"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s">"Vanilla"</span><span class="p">),</span>
+			    <span class="k">new</span> <span class="n">Cupcake</span><span class="p">(</span><span class="s">"Brown"</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s">"Chocolate"</span><span class="p">),</span>
+		<span class="p">};</span>
+	<span class="p">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="c1">// Inheritance Hierarchy</span>
+		<span class="n">Cupcake</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">cupcakes</span><span class="p">();</span>
+
+		<span class="c1">// print with title</span>
+		<span class="n">Cupcake</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+		<span class="n">Cupcake</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+		<span class="c1">// print flavor only</span>
+		<span class="n">Cupcake</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">flavor</span><span class="p">);</span>
+		<span class="n">Cupcake</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+<span class="p">}</span>
+<span class="n">Cupcake</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$21$Cupcake; 9
+Generic: Cupcake listed by title
+Cupcake: Red Velvet, Red, 4
+Cupcake: Orange, Orange, 5
+Cupcake: Lemon, Yellow, 6
+Cupcake: Apple, Green, 7
+Cupcake: Blueberry, Blue, 8
+Cupcake: Blackberry, Purple, 9
+Cupcake: Strawberry, Pink, 10
+Cupcake: Vanilla, Tan, 11
+Cupcake: Chocolate, Brown, 12
+
+class [LREPL.$JShell$21$Cupcake; 9
+Generic: Cupcake listed by flavor
+Red Velvet
+Orange
+Lemon
+Apple
+Blueberry
+Blackberry
+Strawberry
+Vanilla
+Chocolate
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Stage</span> <span class="kd">extends</span> <span class="n">Generics</span> <span class="p">{</span>
+    <span class="c1">// Class data</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">;</span> <span class="c1">// static initializer</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span> <span class="n">Stage</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">,</span> <span class="n">question</span> <span class="p">}</span>
+
+    <span class="c1">// Instance data</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">difficulty</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">question</span><span class="p">;</span>
+
+    <span class="c1">// Constructor</span>
+    <span class="kd">public</span> <span class="nf">Stage</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">difficulty</span><span class="p">,</span> <span class="n">String</span> <span class="n">question</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"Stage"</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">difficulty</span> <span class="o">=</span> <span class="n">difficulty</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">question</span> <span class="o">=</span> <span class="n">question</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* 'Generics' requires getKey to help enforce KeyTypes usage */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Stage</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="cm">/* 'Generics' requires toString override</span>
+<span class="cm">     * toString provides data based off of Static Key setting</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">output</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">difficulty</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s">"Difficulty: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">difficulty</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">question</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s">"Question: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">question</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">", Difficulty: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">difficulty</span> <span class="o">+</span> <span class="s">", Question: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">question</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Test data initializer</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Stage</span><span class="o">[]</span> <span class="nf">stages</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Stage</span><span class="o">[]</span><span class="p">{</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Jungle Jump"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"What data structure uses a LIFO (last in, first out) approach?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Coconut Climb"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"What data structure is made up of a series of nodes, each containing data and a reference to the next node?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Vine Swing"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"What data structure has a hierarchical structure with a root, branches, and leaves?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Banana Bounce"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s">"What data structure is made up of nodes and edges that connect the nodes?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Mango Maze"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"What data structure is a collection of elements of the same type, accessed by an index or a subscript?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Papaya Peak"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s">"What data structure uses a hash function to map keys to values, allowing for efficient lookup and insertion?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Durian Dive"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s">"What data structure is a binary tree with the property that the value of each node is greater than or equal to its children?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Guava Glide"</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s">"What algorithm sorts a list by repeatedly swapping adjacent elements that are in the wrong order?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Passionfruit Plunge"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s">"What algorithm searches for an element in a sorted list by repeatedly dividing the search interval in half?"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Stage</span><span class="p">(</span><span class="s">"Dragonfruit Dash"</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">"What technique solves a problem by breaking it down into smaller subproblems of the same type?"</span><span class="p">),</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Inheritance Hierarchy</span>
+        <span class="n">Stage</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">stages</span><span class="p">();</span>
+
+        <span class="c1">// print with title</span>
+        <span class="n">Stage</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
+        <span class="n">Generics</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+        <span class="c1">// print difficulty only</span>
+        <span class="n">Stage</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">difficulty</span><span class="p">);</span>
+        <span class="n">Generics</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+        <span class="c1">// print question only</span>
+        <span class="n">Stage</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">question</span><span class="p">);</span>
+        <span class="n">Generics</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Stage</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$23$Stage; 10
+Generic: Stage listed by name
+Jungle Jump
+Coconut Climb
+Vine Swing
+Banana Bounce
+Mango Maze
+Papaya Peak
+Durian Dive
+Guava Glide
+Passionfruit Plunge
+Dragonfruit Dash
+
+class [LREPL.$JShell$23$Stage; 10
+Generic: Stage listed by difficulty
+Difficulty: 1
+Difficulty: 2
+Difficulty: 3
+Difficulty: 4
+Difficulty: 5
+Difficulty: 6
+Difficulty: 7
+Difficulty: 8
+Difficulty: 9
+Difficulty: 10
+
+class [LREPL.$JShell$23$Stage; 10
+Generic: Stage listed by question
+Question: What data structure uses a LIFO (last in, first out) approach?
+Question: What data structure is made up of a series of nodes, each containing data and a reference to the next node?
+Question: What data structure has a hierarchical structure with a root, branches, and leaves?
+Question: What data structure is made up of nodes and edges that connect the nodes?
+Question: What data structure is a collection of elements of the same type, accessed by an index or a subscript?
+Question: What data structure uses a hash function to map keys to values, allowing for efficient lookup and insertion?
+Question: What data structure is a binary tree with the property that the value of each node is greater than or equal to its children?
+Question: What algorithm sorts a list by repeatedly swapping adjacent elements that are in the wrong order?
+Question: What algorithm searches for an element in a sorted list by repeatedly dividing the search interval in half?
+Question: What technique solves a problem by breaking it down into smaller subproblems of the same type?
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
