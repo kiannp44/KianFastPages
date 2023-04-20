@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Testing 4/20",
-            "content": "",
+            "content": "// Part 1 public class Book { private String title; private int id; private static int nextId = 1; public static int bookCount = 0; public Book(String title) { this.title = title; this.id = nextId; nextId++; bookCount++; } // Getter and setter for title and id public String getTitle() { return title; } public void setTitle(String title) { this.title = title; } public int getId() { return id; } public void setId(int id) { this.id = id; } // Other fields, constructors, and methods for the Book class } public class Novel extends Book { // fields, constructors, and methods for the Novel class public Novel(String title) { super(title); } } public class Textbook extends Book { // fields, constructors, and methods for the Textbook class public Textbook(String title) { super(title); } } public class BookTester { public static void main(String[] args) { // Test the Book class Book book1 = new Book(&quot;The Great Gatsby&quot;); Book book2 = new Book(&quot;To Kill a Mockingbird&quot;); // Test the getTitle method String title1 = book1.getTitle(); String title2 = book2.getTitle(); System.out.println(&quot;Title 1: &quot; + title1); System.out.println(&quot;Title 2: &quot; + title2); // Test the bookCount field System.out.println(&quot;Book count: &quot; + Book.bookCount); } } . // Part 2 .",
             "url": "https://kiannp44.github.io/KianFastPages/collegeboard/2023/04/20/testing.html",
             "relUrl": "/collegeboard/2023/04/20/testing.html",
             "date": " • Apr 20, 2023"

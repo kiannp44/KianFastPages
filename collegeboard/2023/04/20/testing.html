@@ -59,6 +59,104 @@
 
 <div class="container" id="notebook-container">
         
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// Part 1</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">nextId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">bookCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Book</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">nextId</span><span class="p">;</span>
+        <span class="n">nextId</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">bookCount</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Getter and setter for title and id</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Other fields, constructors, and methods for the Book class</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Novel</span> <span class="kd">extends</span> <span class="n">Book</span> <span class="p">{</span>
+    <span class="c1">// fields, constructors, and methods for the Novel class</span>
+    <span class="kd">public</span> <span class="nf">Novel</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Textbook</span> <span class="kd">extends</span> <span class="n">Book</span> <span class="p">{</span>
+    <span class="c1">// fields, constructors, and methods for the Textbook class</span>
+    <span class="kd">public</span> <span class="nf">Textbook</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookTester</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Test the Book class</span>
+        <span class="n">Book</span> <span class="n">book1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"The Great Gatsby"</span><span class="p">);</span>
+        <span class="n">Book</span> <span class="n">book2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"To Kill a Mockingbird"</span><span class="p">);</span>
+
+        <span class="c1">// Test the getTitle method</span>
+        <span class="n">String</span> <span class="n">title1</span> <span class="o">=</span> <span class="n">book1</span><span class="p">.</span><span class="na">getTitle</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">title2</span> <span class="o">=</span> <span class="n">book2</span><span class="p">.</span><span class="na">getTitle</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Title 1: "</span> <span class="o">+</span> <span class="n">title1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Title 2: "</span> <span class="o">+</span> <span class="n">title2</span><span class="p">);</span>
+
+        <span class="c1">// Test the bookCount field</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Book count: "</span> <span class="o">+</span> <span class="n">Book</span><span class="p">.</span><span class="na">bookCount</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// Part 2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
