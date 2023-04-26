@@ -66,7 +66,7 @@
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="c1"># Define the range of numbers to use in the questions</span>
 <span class="n">MIN_NUMBER</span> <span class="o">=</span> <span class="mi">1</span>
@@ -93,7 +93,8 @@
     <span class="n">user_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
     
     <span class="c1"># Check if the answer is correct and update the score</span>
-    <span class="k">if</span> <span class="nb">eval</span><span class="p">(</span><span class="n">question</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_answer</span><span class="p">):</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="n">question</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="s2">"What is "</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">question</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_answer</span><span class="p">):</span>
         <span class="n">answer_key</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'C'</span><span class="p">)</span>
         <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
@@ -115,17 +116,9 @@
 
 <div class="output_subarea output_text output_error">
 <pre>
-Traceback <span class="ansi-cyan-fg">(most recent call last)</span>:
-
-  File <span class="ansi-green-intense-fg ansi-bold">~/Library/Python/3.10/lib/python/site-packages/IPython/core/interactiveshell.py:3505</span> in <span class="ansi-magenta-intense-fg ansi-bold">run_code</span>
-    exec(code_obj, self.user_global_ns, self.user_ns)
-
-<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[3], line 28</span><span class="ansi-cyan-fg">
-</span><span class="ansi-red-fg">    if eval(question[:-1]) == int(user_answer):</span><span class="ansi-cyan-fg">
-</span>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&lt;string&gt;:1</span>
-<span class="ansi-red-fg">    What is 1 + 7?</span>
-                 ^
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">"&lt;ipython-input-7-c75ac1425724&gt;"</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">24</span>
+<span class="ansi-red-fg">    question = f"What is {num1} {operator} {num2}? "</span>
+                                                   ^
 <span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
 </pre>
 </div>
