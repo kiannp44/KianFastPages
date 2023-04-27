@@ -9,7 +9,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      5 min read
     
 </span></p>
 
@@ -50,7 +50,8 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#Binary-Search-Hack-1">Binary Search Hack 1 </a></li>
+<li class="toc-entry toc-h1"><a href="#Hack-1">Hack 1 </a></li>
+<li class="toc-entry toc-h1"><a href="#Hack-2">Hack 2 </a></li>
 <li class="toc-entry toc-h1"><a href="#Merge-Sort-Hack">Merge Sort Hack </a></li>
 </ul><!--
 #################################################
@@ -132,8 +133,8 @@
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Binary-Search-Hack-1">
-<a class="anchor" href="#Binary-Search-Hack-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binary Search Hack 1<a class="anchor-link" href="#Binary-Search-Hack-1"> </a>
+<h1 id="Hack-1">
+<a class="anchor" href="#Hack-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack 1<a class="anchor-link" href="#Hack-1"> </a>
 </h1>
 </div>
 </div>
@@ -145,112 +146,85 @@
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-    <span class="s">"""</span>
-<span class="s">    This function performs binary search recursively on a sorted integer array to find a target value.</span>
-<span class="s">    Args:</span>
-<span class="s">        arr: A sorted integer array.</span>
-<span class="s">        low: The lower index of the subarray being searched.</span>
-<span class="s">        high: The upper index of the subarray being searched.</span>
-<span class="s">        target: The integer value being searched for.</span>
-<span class="s">    Returns:</span>
-<span class="s">        The index of the target value if found, else -1.</span>
-<span class="s">    """</span>
-    <span class="err">#</span> <span class="n">Check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">subarray</span> <span class="n">has</span> <span class="n">been</span> <span class="n">exhausted</span>
-    <span class="k">if</span> <span class="n">high</span> <span class="o">&gt;=</span> <span class="n">low</span><span class="p">:</span>
-        <span class="err">#</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">subarray</span>
-        <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="c1">// 2</span>
-        
-        <span class="err">#</span> <span class="n">If</span> <span class="n">the</span> <span class="n">target</span> <span class="n">is</span> <span class="n">found</span> <span class="n">at</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">index</span><span class="p">,</span> <span class="k">return</span> <span class="n">it</span>
-        <span class="k">if</span> <span class="n">arr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">mid</span>
-        
-        <span class="err">#</span> <span class="n">If</span> <span class="n">the</span> <span class="n">target</span> <span class="n">is</span> <span class="n">smaller</span> <span class="n">than</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">element</span><span class="p">,</span>
-        <span class="err">#</span> <span class="n">search</span> <span class="n">the</span> <span class="n">left</span> <span class="n">half</span> <span class="n">of</span> <span class="n">the</span> <span class="n">subarray</span>
-        <span class="n">elif</span> <span class="n">arr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-        
-        <span class="err">#</span> <span class="n">If</span> <span class="n">the</span> <span class="n">target</span> <span class="n">is</span> <span class="n">larger</span> <span class="n">than</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">element</span><span class="p">,</span>
-        <span class="err">#</span> <span class="n">search</span> <span class="n">the</span> <span class="n">right</span> <span class="n">half</span> <span class="n">of</span> <span class="n">the</span> <span class="n">subarray</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="err">#</span> <span class="n">If</span> <span class="n">the</span> <span class="n">subarray</span> <span class="n">has</span> <span class="n">been</span> <span class="n">exhausted</span> <span class="n">and</span> <span class="n">the</span> <span class="n">target</span> <span class="n">is</span> <span class="n">not</span> <span class="n">found</span><span class="p">,</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">leftArray</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">copyOfRange</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">rightArray</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">copyOfRange</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
 
+        <span class="n">mergeSort</span><span class="p">(</span><span class="n">leftArray</span><span class="p">);</span>
+        <span class="n">mergeSort</span><span class="p">(</span><span class="n">rightArray</span><span class="p">);</span>
 
-<span class="err">#</span> <span class="n">Test</span> <span class="n">the</span> <span class="n">function</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">67</span><span class="o">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">45</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="n">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Element {target} is present at index {result}"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Element {target} is not present in the array"</span><span class="p">)</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">leftArray</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">rightArray</span><span class="p">.</span><span class="na">length</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">leftArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">rightArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">leftArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">rightArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">leftArray</span><span class="p">.</span><span class="na">length</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">leftArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">rightArray</span><span class="p">.</span><span class="na">length</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">rightArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">binarySearch</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">mid</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span>
+    <span class="n">mergeSort</span><span class="p">(</span><span class="n">array</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">binarySearch</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Index of 7 is: "</span> <span class="o">+</span> <span class="n">index</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"7 is not found in the array"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">def binary_search(arr</span><span class="ansi-black-intense-fg ansi-bold">, low, high, target):</span>
-<span class="ansi-red-intense-fg ansi-bold">&lt;identifier&gt; expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">def binary_search(arr, low</span><span class="ansi-black-intense-fg ansi-bold">, high, target):</span>
-<span class="ansi-red-intense-fg ansi-bold">&lt;identifier&gt; expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">def binary_search(arr, low, high</span><span class="ansi-black-intense-fg ansi-bold">, target):</span>
-<span class="ansi-red-intense-fg ansi-bold">&lt;identifier&gt; expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">def binary_search(arr, low, high, target</span><span class="ansi-black-intense-fg ansi-bold">):</span>
-<span class="ansi-red-intense-fg ansi-bold">&lt;identifier&gt; expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">def binary_search(arr, low, high, target)</span><span class="ansi-black-intense-fg ansi-bold">:</span>
-<span class="ansi-red-intense-fg ansi-bold">';' expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    </span><span class="ansi-black-intense-fg ansi-bold"># Check if the subarray has been exhausted</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># Calculate the middle index of the subarray</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># If the target is found at the middle index, return it</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># If the target is smaller than the middle element,</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># search the left half of the subarray</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># If the target is larger than the middle element,</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># search the right half of the subarray</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-bold"># If the subarray has been exhausted and the target is not found, return -1</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"># Test the function</span>
-<span class="ansi-red-intense-fg ansi-bold">illegal character: '#'</span>
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hack-2">
+<a class="anchor" href="#Hack-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack 2<a class="anchor-link" href="#Hack-2"> </a>
+</h1>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
