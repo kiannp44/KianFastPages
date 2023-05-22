@@ -52,7 +52,9 @@
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#custom-range-slider">Custom Range Slider</a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#title">{title}</a></li>
 <li class="toc-entry toc-h2"><a href="#filter-div-elements">Filter DIV Elements</a></li>
+<li class="toc-entry toc-h2"><a href="#title-1">{title}</a></li>
 </ul>
 </li>
 </ul><body>
@@ -823,6 +825,48 @@ a {
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<script lang="ts">
+    export let title: string;
+    export let text: string;
+    export let link: string;
+  export let level: string;
+  let completed: Boolean;
+
+
+  Fetch();
+
+  async function Fetch () {
+    fetch("https://monkeybackend.rohanj.dev/api/code/getLevelList", {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        }
+        })
+        .then(response =>
+            response.json().then(data => {
+              if (data[level] == "Complete") completed = true;
+              else completed = false;
+        }).catch(e => { })
+        )
+        .catch(error => {
+
+        })
+    }
+</script><div class="card w-96 bg-green-700 shadow-xl border-green-800 border-2">
+    <div class="card-body">
+      <h2 class="card-title">
+<a class="anchor" href="#title" aria-hidden="true"><span class="octicon octicon-link"></span></a>{title}</h2>
+      <p>{text}</p>
+      {#if completed}
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check absolute right-7 top-5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      {/if}
+      <div class="card-actions justify-end">
+        <a href="/frq/%7Blink%7D" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+  </div>
 <p>&lt;!DOCTYPE html&gt;</p>
 
 <style>
@@ -943,8 +987,48 @@ for (var i = 0; i < btns.length; i++) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <script lang="ts">
-    import Card from "../../../components/Card.svelte";
-</script><div id="myBtnContainer" class="bg-green-700">
+    export let title: string;
+    export let text: string;
+    export let link: string;
+  export let level: string;
+  let completed: Boolean;
+
+
+  Fetch();
+
+  async function Fetch () {
+    fetch("https://monkeybackend.rohanj.dev/api/code/getLevelList", {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        }
+        })
+        .then(response =>
+            response.json().then(data => {
+              if (data[level] == "Complete") completed = true;
+              else completed = false;
+        }).catch(e => { })
+        )
+        .catch(error => {
+
+        })
+    }
+</script><div class="card w-96 bg-green-700 shadow-xl border-green-800 border-2">
+    <div class="card-body">
+      <h2 class="card-title">
+<a class="anchor" href="#title-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>{title}</h2>
+      <p>{text}</p>
+      {#if completed}
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check absolute right-7 top-5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      {/if}
+      <div class="card-actions justify-end">
+        <a href="/frq/%7Blink%7D" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+  </div>
+<div id="myBtnContainer" class="bg-green-700">
     <button class="btn active" onclick="filterSelection('all')"> Show all</button>
     <button class="btn" onclick="filterSelection('mncs')"> Methods and Control Structures</button>
     <button class="btn" onclick="filterSelection('classes')"> Classes</button>
